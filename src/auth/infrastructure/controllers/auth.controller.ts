@@ -1,11 +1,12 @@
 import { AuthService } from "../../application/auth.service";
-import { Body, Controller, Post, Route, Tags } from "tsoa";
+import { Body, Controller, Hidden, Post, Route, Tags } from "tsoa";
 import { UserRepositoryPrismaPgSQL } from "../user.repository";
 import { UserService } from "../../application/user.service";
 import { IResponseMessage } from "../../../common/response.message.interface";
 
 @Route('/api/auth')
 @Tags('Auth')
+@Hidden()
 export class AuthController extends Controller {
     private readonly authService: AuthService;
 

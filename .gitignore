@@ -3,3 +3,5 @@ node_modules
 build
 dist
 .env
+.wwebjs_cache
+SebastianTigo

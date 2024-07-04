@@ -1,5 +1,5 @@
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -22,4 +22,26 @@ model User {
   password  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Template {
+  id        String   @id @default(uuid())
+  name      String
+  message   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relación con Log
+  logs      Log[]
+}
+
+model Log {
+  id                String   @id @default(uuid())
+  cellphone_number  String
+  status            String
+  log_message       String
+  template_id       String
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  template          Template @relation(fields: [template_id], references: [id])
 }

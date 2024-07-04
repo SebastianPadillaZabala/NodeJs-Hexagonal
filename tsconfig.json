@@ -9,11 +9,10 @@
       "experimentalDecorators": true,
       "emitDecoratorMetadata": true,
       "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true,
       "resolveJsonModule": true,
       "forceConsistentCasingInFileNames": true
     },
-    "include": ["src/**/*"],
+    "include": ["src/**/*", "globals.d.ts"],
     "exclude": ["node_modules"]
   }
   
